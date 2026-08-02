@@ -1,0 +1,118 @@
+import { AiEngineSettings } from '../types';
+
+export const INITIAL_AI_ENGINE_SETTINGS: AiEngineSettings = {
+  selectedModel: 'gemini-3.6-flash',
+  customApiKey: '',
+  temperature: 0.7,
+  maxTokens: 1024,
+  topP: 0.9,
+
+  promptScopeMode: 'per_account',
+
+  globalSystemInstruction: `You are an elite cross-platform social media copywriter and growth strategist. Write punchy, authoritative, high-converting posts. Never use generic corporate jargon or AI clichés. Every sentence must deliver value.`,
+  globalRhetoricStyle: 'High Impact & Punchy',
+  globalTone: 'Confident, visionary, concise and direct',
+  globalKeywords: '#BuildInPublic, #Tech, #AI, #Innovation',
+  globalBannedWords: 'supercharge, empower, game-changer, unleash, synergy, cutting-edge, revolutionize',
+  emojiDensity: 'minimal',
+  includeHashtagStrategy: true,
+
+  platformPrompts: {
+    xPrompt: 'Focus on short, high-engagement Twitter hooks (under 280 characters). Use bullet points for readability and end with a strong question or call to action.',
+    telegramPrompt: 'Focus on comprehensive broadcast notes for Telegram subscribers. Use bold headings, bullet points, and code blocks where applicable.',
+    xRhetoric: 'Viral Founder / Hook-Driven',
+    telegramRhetoric: 'In-Depth Bulletin & Analysis',
+  },
+
+  accountPersonas: {
+    acc_1: {
+      accountId: 'acc_1',
+      accountHandle: '@TechPulse_X',
+      accountName: 'TechPulse Official',
+      customTone: 'Authoritative Tech Industry Insider',
+      rhetoricStyle: 'Data-Backed Analytical & Forward-Looking',
+      specificKeywords: '#TechPulse #EnterpriseAI #CloudNative',
+      bannedWords: 'hype, shocking, groundbreaking',
+      customPromptInstruction: 'Write from the perspective of an official technology outlet. Emphasize metrics, industry trends, and architectural performance.',
+      useCustomPersona: true,
+    },
+    acc_2: {
+      accountId: 'acc_2',
+      accountHandle: '@CryptoTrader_X',
+      accountName: 'Crypto & Market Pulse',
+      customTone: 'Fast-Paced Financial & Web3 Market Analyst',
+      rhetoricStyle: 'Urgent, High-Signal Market Flash',
+      specificKeywords: '#Bitcoin #Crypto #MacroEconomics #Web3',
+      bannedWords: 'financial advice, guaranteed gains, moon',
+      customPromptInstruction: 'Highlight market catalysts, price action levels, and macro trends in a concise bullet-point bulletin.',
+      useCustomPersona: true,
+    },
+    acc_3: {
+      accountId: 'acc_3',
+      accountHandle: '@AIDigest_X',
+      accountName: 'AI & Developer Digest',
+      customTone: 'Deep-Tech AI Engineer & Research Curator',
+      rhetoricStyle: 'Technical & Educational Code Insights',
+      specificKeywords: '#LLMs #Gemini #MachineLearning #DevRel',
+      bannedWords: 'magic, sentient, robot revolution',
+      customPromptInstruction: 'Focus on developer productivity, model benchmarks, code snippets, and API optimization tactics.',
+      useCustomPersona: true,
+    },
+    acc_4: {
+      accountId: 'acc_4',
+      accountHandle: '@DevNews_X',
+      accountName: 'DevOps & Cloud Feed',
+      customTone: 'Pragmatic Systems Architect & Infrastructure Guru',
+      rhetoricStyle: 'No-BS Open Source & Systems Engineering',
+      specificKeywords: '#DevOps #Kubernetes #Docker #Backend',
+      bannedWords: 'silver bullet, easy fix',
+      customPromptInstruction: 'Focus on system reliability, edge computing, proxy setups, and backend scalability.',
+      useCustomPersona: true,
+    },
+    tg_ch_2: {
+      accountId: 'tg_ch_2',
+      accountHandle: '@TechPulseTelegram',
+      accountName: 'TechPulse Official Telegram Channel',
+      customTone: 'Vip Broadcast Channel Executive',
+      rhetoricStyle: 'Structured Broadcast Digest with Links',
+      specificKeywords: '#TelegramDigest #TechPulse',
+      bannedWords: 'spam, clickhere',
+      customPromptInstruction: 'Format text with bold section titles, concise summaries, and clean line spacing for mobile Telegram readers.',
+      useCustomPersona: true,
+    },
+  },
+
+  mcp: {
+    enabled: true,
+    serverUrl: 'ws://mcp.ai-studio.internal/v1/context',
+    authToken: 'mcp_sk_live_99a8b7c6d5e4f321',
+    status: 'connected',
+    latencyMs: 42,
+    availableTools: [
+      {
+        id: 'mcp_tool_1',
+        name: 'get_trending_hashtags',
+        description: 'Fetches real-time viral Twitter/X & Telegram trending keywords and engagement metrics',
+        enabled: true,
+      },
+      {
+        id: 'mcp_tool_2',
+        name: 'grammar_and_tone_validator',
+        description: 'Scans draft for banned AI slop words and verifies rhetoric tone consistency',
+        enabled: true,
+      },
+      {
+        id: 'mcp_tool_3',
+        name: 'account_history_analyzer',
+        description: 'Retrieves top-performing historical tweets from connected account boxes to align style',
+        enabled: true,
+      },
+      {
+        id: 'mcp_tool_4',
+        name: 'live_web_search_grounding',
+        description: 'Performs Google search grounding for up-to-the-minute tech and crypto news verification',
+        enabled: true,
+      },
+    ],
+  },
+};

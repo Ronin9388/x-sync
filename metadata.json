@@ -1,0 +1,6 @@
+{
+  "name": "X Sync",
+  "description": "Multi-account X messaging auto-sync and interval posting platform with collapsible target account management boxes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
